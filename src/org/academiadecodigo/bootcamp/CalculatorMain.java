@@ -5,15 +5,12 @@ public class CalculatorMain {
 
     public static void main(String[] args) {
 
-        Calculator calculator = new Calculator("casio", "black");
+        Calculator calculator = new Calculator();
+
+        Operation add = Operation.ADD;
 
 
-        calculator.setBrand("Texas Instruments");
-
-        String brand = calculator.getBrand();
-
-        System.out.println(calculator.divide(90, 45));
-
+        System.out.println(calculator.doOperation(Operation.DIVIDE,2,3));
 
     }
 
