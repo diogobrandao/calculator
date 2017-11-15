@@ -5,12 +5,11 @@ public class CalculatorMain {
 
     public static void main(String[] args) {
 
-        Calculator calculator = new Calculator();
+    Calculator calculator = new Calculator("casio","white");
 
-        Operation add = Operation.ADD;
+    calculator.doOperation(Operation.ADD, 2,3);
 
 
-        System.out.println(calculator.doOperation(Operation.DIVIDE,2,3));
 
     }
 

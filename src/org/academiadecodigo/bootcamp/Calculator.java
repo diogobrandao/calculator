@@ -1,66 +1,50 @@
 package org.academiadecodigo.bootcamp;
 
-import java.awt.*;
-import java.util.concurrent.SynchronousQueue;
-
 public class Calculator {
-
     private String brand;
     private String color;
+    private Brain brain;
+    private Display display;
 
-private Operation operation;
+    public Calculator(String brand, String color) {
+
+        this.brand = brand;
+        this.color = color;
+        brain = new Brain();
+        display = new Display();
+
+        int result = 0;
+    }
 
     public int doOperation(Operation operation, int number1, int number2) {
 
         int result = 0;
 
-        switch (operation){
+        switch (operation) {
 
-        case ADD:
-            result = add(number1, number2 );
-            System.out.println("add...");
-            break;
+            case ADD:
+                result = this.brain.add(number1, number2);
+                this.display.showResult(result);
+                break;
 
-        case SUBTRACT:
-            result = subtract(number1,number2 );
-            System.out.println("subtract...");
-            break;
+            case SUBTRACT:
+                result = this.brain.subtract(number1, number2);
+                this.display.showResult(result);
+                break;
 
-        case MULTIPLY:
-            result = multiply(number1,number2);
-            System.out.println("multiply...");
-            break;
+            case MULTIPLY:
+                result = this.brain.multiply(number1, number2);
+                this.display.showResult(result);
+                break;
 
-        case DIVIDE:
-            result = divide(number1, number2);
-            System.out.println("the division...");
-            break;
+            case DIVIDE:
+                result = this.brain.divide(number1, number2);
+                this.display.showResult(result);
+                break;
 
-    }
 
+        }
         return result;
     }
 
-    private int add(int number1, int number2) {
-          return number1 + number2;
-
-    }
-
-    private int subtract(int number1, int number2) {
-          return number1 - number2;
-
-    }
-
-    private int multiply(int number1, int number2) {
-          return number1 * number2;
-    }
-
-    private int divide(int number1, int number2) {
-          return number1 / number2;
-    }
-
-
-
 }
-
-
